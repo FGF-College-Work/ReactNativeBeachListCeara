@@ -6,6 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import ListScreen from '../screens/ListScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -49,6 +50,20 @@ SettingsStack.navigationOptions = {
     <TabBarIcon
       focused={focused}
       name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
+    />
+  ),
+};
+
+const ListStack = createStackNavigator({
+  List: ListScreen,
+});
+
+ListStack.navigationOptions = {
+  tabBarLabel: 'List',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon 
+      focused={focused}
+      name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outilne'}` : 'md-options'}
     />
   ),
 };
